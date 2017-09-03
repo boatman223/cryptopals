@@ -5,9 +5,7 @@ def pad_input(input, length):
     if len(input) >= length:
         return input
     pad_length = length - len(input)
-    padded = bytearray(input)
-    for i in range(pad_length):
-        padded += pad_char
+    padded = bytearray(input) + (pad_char * pad_length)
     return bytes(padded)
     
 result = pad_input(input, 20)
