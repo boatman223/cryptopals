@@ -1,6 +1,4 @@
-import codecs
 import pprint
-import binascii
 import base64
 import string
 import sys
@@ -81,7 +79,7 @@ def transpose_blocks(input, keysize):
     broken = [input[x:x+keysize] for x in range(0, len(input), keysize)][:-1]
     transposed = [bytearray(b'') for k in range(keysize)]
     for block in broken:
-        for j in range(0, keysize):
+        for j in range(keysize):
             transposed[j].append(block[j])
     
     return transposed
@@ -98,7 +96,8 @@ english_freq = list(english_freq)[::-1]
 
 with open('6.txt', 'r') as input_file:
     input_text = input_file.read()
-decrypt_me = base64.b64decode(input_text.replace('\n',''))
+    
+decrypt_me = base64.b64decode(input_text)
 
     
 keysize = calculate_keysize(decrypt_me)
