@@ -20,5 +20,3 @@ for entry in ciphertexts:
     if result: break
     
 pprint.pprint(result)
-
-            
