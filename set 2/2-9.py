@@ -1,7 +1,6 @@
 input = b'YELLOW SUBMARINE'
 
-def pad_input(input, length):
-    pad_char = b'\x04'
+def pad_input(input, length, pad_char=b'\x04'):
     if len(input) >= length:
         return input
     pad_length = length - len(input)
